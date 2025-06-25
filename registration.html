@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registration Page</title>
+    <link rel="stylesheet" href="css/registration.css" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo-title">
+        <!-- Logo and Website Name -->
+        <img src="logo.png" alt="Logo" class="site-logo" />
+        <span class="site-name"
+          ><h3>
+            <span class="highlight-yellow">ISATU </span
+            ><span class="highlight-blue">Vehicle Registration System</span>
+          </h3></span
+        >
+      </div>
+      <div class="header-right">
+        <button class="login-btn">Login</button>
+        <button class="register-btn">Register Vehicle</button>
+      </div>
+    </header>
+
+    <div class="container">
+      <h2><span class="highlight">Vehicle</span> <span>Registration</span></h2>
+      <p>
+        Please fill out the form completely and upload the required documents.
+      </p>
+
+      <form>
+        <section>
+          <h3>User Information</h3>
+          <div class="checkbox-group">
+            <label><input type="radio" name="userType" /> Student</label>
+            <label><input type="radio" name="userType" /> Faculty</label>
+            <label
+              ><input type="radio" name="userType" /> Non-Teaching
+              Personnel</label
+            >
+          </div>
+
+          <div class="grid-3">
+            <input type="text" placeholder="Lastname" />
+            <input type="text" placeholder="Firstname" />
+            <input type="text" placeholder="Middlename" />
+          </div>
+
+          <div class="grid-2">
+            <input type="email" placeholder="Email Address" />
+            <input type="text" placeholder="Contact Number" />
+          </div>
+
+          <div class="grid-3">
+            <select>
+              <option>College of Arts and Sciences</option>
+            </select>
+            <select>
+              <option>Select Course</option>
+            </select>
+            <select>
+              <option>Select Academic Year</option>
+            </select>
+          </div>
+
+          <div class="grid-3">
+            <select>
+              <option>Year Level</option>
+            </select>
+            <input type="text" placeholder="Section" />
+          </div>
+
+          <div class="upload-box">
+            <label>Upload Scanned Copy of Driver's License</label>
+            <div class="upload-area">
+              Drag and drop files here or
+              <span class="browse">click to browse</span>
+              <input
+                type="file"
+                accept="image/*,application/pdf"
+                style="display: none"
+              />
+              <img
+                class="file-preview"
+                style="
+                  display: none;
+                  margin-top: 12px;
+                  max-width: 120px;
+                  max-height: 90px;
+                  border-radius: 8px;
+                  border: 1px solid #ccc;
+                "
+                alt="Preview"
+              />
+              <button
+                type="button"
+                class="remove-preview"
+                style="display: none"
+              >
+                x
+              </button>
+            </div>
+          </div>
+        </section>
+
+        <div id="vehicle-sections">
+          <section class="vehicle-section">
+            <h3>Vehicle Information</h3>
+
+            <div class="grid-3">
+              <select>
+                <option>Select Vehicle Type</option>
+              </select>
+              <input type="text" placeholder="Manufacturer" />
+              <input type="text" placeholder="Model" />
+            </div>
+
+            <div class="grid-3">
+              <input type="text" placeholder="Color" />
+              <input type="text" placeholder="Plate Number" />
+              <select>
+                <option>Select Number of Wheels</option>
+              </select>
+            </div>
+
+            <div class="grid-2">
+              <select>
+                <option>Select Fuel Type</option>
+              </select>
+              <input type="text" placeholder="Cubic Capacity" />
+            </div>
+
+            <div class="upload-box">
+              <label>Upload Scanned Copy of Official Receipt (OR)</label>
+              <div class="upload-area">
+                Drag and drop files here or
+                <span class="browse">click to browse</span>
+                <input
+                  type="file"
+                  accept="image/*,application/pdf"
+                  style="display: none"
+                />
+                <img
+                  class="file-preview"
+                  style="
+                    display: none;
+                    margin-top: 12px;
+                    max-width: 120px;
+                    max-height: 90px;
+                    border-radius: 8px;
+                    border: 1px solid #ccc;
+                  "
+                  alt="Preview"
+                />
+                <button
+                  type="button"
+                  class="remove-preview"
+                  style="display: none"
+                >
+                  x
+                </button>
+              </div>
+            </div>
+
+            <div class="upload-box">
+              <label
+                >Upload Scanned Copy of Certificate of Registration (CR)</label
+              >
+              <div class="upload-area">
+                Drag and drop files here or
+                <span class="browse">click to browse</span>
+                <input
+                  type="file"
+                  accept="image/*,application/pdf"
+                  style="display: none"
+                />
+                <img
+                  class="file-preview"
+                  style="
+                    display: none;
+                    margin-top: 12px;
+                    max-width: 120px;
+                    max-height: 90px;
+                    border-radius: 8px;
+                    border: 1px solid #ccc;
+                  "
+                  alt="Preview"
+                />
+                <button
+                  type="button"
+                  class="remove-preview"
+                  style="display: none"
+                >
+                  x
+                </button>
+              </div>
+            </div>
+
+            <button
+              type="button"
+              class="remove-vehicle-btn"
+              style="
+                margin: 10px 0;
+                background: #f44336;
+                color: #fff;
+                border: none;
+                border-radius: 4px;
+                padding: 6px 12px;
+                cursor: pointer;
+                display: none;
+              "
+            >
+              Remove Vehicle
+            </button>
+          </section>
+        </div>
+        <button type="button" class="add-btn" id="addVehicleBtn">
+          + Add More Vehicle
+        </button>
+
+        <div class="agreement">
+          <input type="checkbox" /> I agree to the university’s traffic
+          regulations, security policies, and penalties for violations
+        </div>
+        <div class="button-row">
+          <button type="submit" class="submit-btn">Submit Application</button>
+        </div>
+      </form>
+    </div>
+    <script>
+      // Drag and drop animation
+      document.querySelectorAll(".upload-area").forEach(function (area) {
+        area.addEventListener("dragover", function (e) {
+          e.preventDefault();
+          area.classList.add("dragover");
+        });
+        area.addEventListener("dragleave", function (e) {
+          area.classList.remove("dragover");
+        });
+        area.addEventListener("drop", function (e) {
+          e.preventDefault();
+          area.classList.remove("dragover");
+          const fileInput = area.querySelector('input[type="file"]');
+          if (e.dataTransfer.files.length) {
+            fileInput.files = e.dataTransfer.files;
+            showPreview(area, fileInput.files[0]);
+          }
+        });
+
+        // Click to browse
+        area.querySelector(".browse").addEventListener("click", function () {
+          area.querySelector('input[type="file"]').click();
+        });
+
+        // File input change
+        area
+          .querySelector('input[type="file"]')
+          .addEventListener("change", function (e) {
+            if (e.target.files.length) {
+              showPreview(area, e.target.files[0]);
+            }
+          });
+
+        // Remove preview
+        area
+          .querySelector(".remove-preview")
+          .addEventListener("click", function () {
+            const fileInput = area.querySelector('input[type="file"]');
+            fileInput.value = "";
+            hidePreview(area);
+          });
+      });
+
+      function showPreview(area, file) {
+        const preview = area.querySelector(".file-preview");
+        const removeBtn = area.querySelector(".remove-preview");
+        if (file.type.startsWith("image/")) {
+          const reader = new FileReader();
+          reader.onload = function (e) {
+            preview.src = e.target.result;
+            preview.style.display = "block";
+          };
+          reader.readAsDataURL(file);
+        } else {
+          preview.src = "";
+          preview.style.display = "none";
+        }
+        removeBtn.style.display = "inline-block";
+      }
+
+      function hidePreview(area) {
+        const preview = area.querySelector(".file-preview");
+        const removeBtn = area.querySelector(".remove-preview");
+        preview.src = "";
+        preview.style.display = "none";
+        removeBtn.style.display = "none";
+      }
+
+      // Add more vehicle section
+      let vehicleCount = 1;
+      document
+        .getElementById("addVehicleBtn")
+        .addEventListener("click", function () {
+          const vehicleSections = document.getElementById("vehicle-sections");
+          const lastSection = vehicleSections.querySelector(
+            ".vehicle-section:last-child"
+          );
+          const newSection = lastSection.cloneNode(true);
+
+          // Reset all input values in the cloned section
+          newSection.querySelectorAll("input, select").forEach(function (el) {
+            if (el.type === "file") {
+              el.value = "";
+            } else if (el.tagName.toLowerCase() === "select") {
+              el.selectedIndex = 0;
+            } else {
+              el.value = "";
+            }
+          });
+
+          // Reset file preview and remove button
+          newSection.querySelectorAll(".file-preview").forEach(function (img) {
+            img.src = "";
+            img.style.display = "none";
+          });
+          newSection
+            .querySelectorAll(".remove-preview")
+            .forEach(function (btn) {
+              btn.style.display = "none";
+            });
+
+          // Remove dragover class if present
+          newSection.querySelectorAll(".upload-area").forEach(function (area) {
+            area.classList.remove("dragover");
+          });
+
+          vehicleSections.appendChild(newSection);
+
+          // Re-attach upload-area event listeners for the new section
+          attachUploadAreaEvents(newSection);
+          attachRemoveVehicleEvent(newSection);
+          updateRemoveButtons();
+        });
+
+      function updateRemoveButtons() {
+        const sections = document.querySelectorAll(".vehicle-section");
+        sections.forEach(function (section, idx) {
+          const btn = section.querySelector(".remove-vehicle-btn");
+          if (sections.length > 1) {
+            btn.style.display = "inline-block";
+          } else {
+            btn.style.display = "none";
+          }
+        });
+      }
+
+      // Add event listener for remove buttons
+      function attachRemoveVehicleEvent(section) {
+        const btn = section.querySelector(".remove-vehicle-btn");
+        btn.addEventListener("click", function () {
+          const allSections = document.querySelectorAll(".vehicle-section");
+          if (allSections.length > 1) {
+            if (confirm("Are you sure you want to delete?")) {
+              section.classList.add("removing");
+              setTimeout(() => {
+                section.remove();
+                updateRemoveButtons();
+              }, 350); // Match the CSS animation duration
+            }
+          }
+        });
+      }
+
+      // Helper to attach upload-area events to a section
+      function attachUploadAreaEvents(section) {
+        section.querySelectorAll(".upload-area").forEach(function (area) {
+          area.addEventListener("dragover", function (e) {
+            e.preventDefault();
+            area.classList.add("dragover");
+          });
+          area.addEventListener("dragleave", function (e) {
+            area.classList.remove("dragover");
+          });
+          area.addEventListener("drop", function (e) {
+            e.preventDefault();
+            area.classList.remove("dragover");
+            const fileInput = area.querySelector('input[type="file"]');
+            if (e.dataTransfer.files.length) {
+              fileInput.files = e.dataTransfer.files;
+              showPreview(area, fileInput.files[0]);
+            }
+          });
+
+          area.querySelector(".browse").addEventListener("click", function () {
+            area.querySelector('input[type="file"]').click();
+          });
+
+          area
+            .querySelector('input[type="file"]')
+            .addEventListener("change", function (e) {
+              if (e.target.files.length) {
+                showPreview(area, e.target.files[0]);
+              }
+            });
+
+          area
+            .querySelector(".remove-preview")
+            .addEventListener("click", function () {
+              const fileInput = area.querySelector('input[type="file"]');
+              fileInput.value = "";
+              hidePreview(area);
+            });
+        });
+      }
+
+      // On page load, attach events to the initial vehicle section(s)
+      document.querySelectorAll(".vehicle-section").forEach(function (section) {
+        attachUploadAreaEvents(section);
+        attachRemoveVehicleEvent(section);
+      });
+      updateRemoveButtons();
+    </script>
+  </body>
+</html>
